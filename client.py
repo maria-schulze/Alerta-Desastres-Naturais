@@ -22,7 +22,7 @@ def enviar_mensagens(sock):
             break
 def start_client():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('10.1.25.63', 8080))
+    client_socket.connect(('192.168.0.116', 8080))
 
     receber_thread = threading.Thread(target=receber_mensagens, args=(client_socket,))
     enviar_thread = threading.Thread(target=enviar_mensagens, args=(client_socket,))
